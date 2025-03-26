@@ -1,0 +1,41 @@
+body { font-family: Arial, sans-serif; padding: 20px; margin-top: 10.5px; }
+
+li { list-style-type: none; }
+
+.folder, .file, .image { cursor: pointer; padding-left: 10px; padding-block: 2.5px;}
+
+.folder::before { color: blue; content: "📁 "; }
+.open::before { color: blue; content: "📂 "; }
+.image::before { content: "🖼️ "; }
+.file::before { content: "📄 "; }
+
+.nested { 
+    display: none;
+    margin: 0px;
+    padding-left: 15px; 
+    margin-left: 8px; 
+}
+
+.folder.nested {
+    padding-left: 25px;
+    margin-left: 20px;
+}
+
+.folder.open > .nested {
+    display: block;
+}
+
+/* First evel of nested */
+.nested {
+    border-left: 2px solid #aaa;
+}
+
+/* Second evel of nested */
+.nested .nested {
+    border-left: 2px solid #8a8a8a;
+}
+
+/* Third evel of nested */
+.nested .nested .nested {
+    border-left: 2px solid #616161;
+}
